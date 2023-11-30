@@ -32,3 +32,22 @@ git remote add origin https://github.com/developersksingh/git-demo.git
   git push -u origin main
 …or import code from another repository
 You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+
+Step 1: Generate Your SSH Key
+
+$ ssh-keygen -t rsa -b 4096 -C "example@example.com"
+Step 2: Use the Key
+
+$ eval $(ssh-agent -s)
+Then add the key we just generated. If you selected a different path than the default, be sure to replace that path in the command.
+
+ssh-add ~/.ssh/id_rsa
+Step 3: Add the SSH Key on GitHub
+
+clip < ~/.ssh/id_rsa.pub
+if clip not found then add the next command
+
+cat ~/.ssh/id_rsa.pub
+Finally Result something like on your cmd
+
+ssh-rsa AAAA
